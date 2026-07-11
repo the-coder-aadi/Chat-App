@@ -1,5 +1,9 @@
 {
   "type": "module",
+    "scripts": {
+    "start": "node App.js",
+    "dev": "nodemon App.js"
+  },
   "dependencies": {
     "@upstash/redis": "^1.38.0",
     "bcrypt": "^6.0.0",
