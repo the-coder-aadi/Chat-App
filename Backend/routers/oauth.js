@@ -1,6 +1,7 @@
 import express from "express"
 import passport from "passport"
 import jwt from "jsonwebtoken"
+
 const authrouter = express.Router()
 authrouter.get("/auth/google", passport.authenticate("google",
     {scope:["email", "profile"]}
@@ -37,6 +38,9 @@ authrouter.get(
 
     maxAge: 10 * 24 * 60 * 60 * 1000
 })
+
+
+
 
 res.redirect(
 `${process.env.CLIENT_URL}/home?username=${encodeURIComponent(req.user.name)}
