@@ -3,7 +3,7 @@ import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import ProtectedRoute from "./pages/ProtectedRoute"
 import { Navigate } from "react-router-dom"
-import Home from "./pages/home"
+import Home from "./pages/Home"
 import ChatRoom from "./pages/ChatRoom"
 import Notification from "./pages/notification"
 function App() {
