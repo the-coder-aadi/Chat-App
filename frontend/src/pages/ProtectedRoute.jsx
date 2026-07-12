@@ -78,6 +78,7 @@ return;
             
         }
     }
+    
   if (loading || minimumLoading) {
     return <LoadingScreen />;
 }
