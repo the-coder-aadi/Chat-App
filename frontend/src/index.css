@@ -29,3 +29,10 @@
     transform: translateY(0) scale(1);
   }
 }
+
+html,
+body,
+#root{
+height:100%;
+overflow:hidden;
+}

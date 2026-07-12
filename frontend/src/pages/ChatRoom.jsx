@@ -811,10 +811,10 @@ createdAt:new Date().toISOString()
         }
       `}</style>
 
-      <div className="flex flex-col h-screen w-screen overflow-hidden" style={{ background: "#FAF6F1" }}>
+      <div className="flex flex-col h-dvh w-screen overflow-hidden" style={{ background: "#FAF6F1" }}>
 
         {/* ── Top bar ── */}
-        <header className="flex items-center justify-between px-4 sm:px-5 py-3 border-b flex-shrink-0"
+        <header className="flex-shrink-0 flex items-center justify-between px-4 sm:px-5 py-3 border-b z-50"
           style={{ background: "rgba(255,253,249,0.97)", backdropFilter: "blur(12px)", borderColor: "#EDE3DA" }}>
           <div className="flex items-center gap-3">
             <button onClick={() => navigate("/home")}
@@ -851,7 +851,7 @@ createdAt:new Date().toISOString()
         </header>
 
         {/* ── Messages area ── */}
-        <div className="flex-1 overflow-y-auto overflow-x-visible px-4 sm:px-8 py-5" style={{ background: "#FAF6F1" }}>
+        <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-4 sm:px-8 py-5" style={{ background: "#FAF6F1" }}>
           {messages.map((msg, i) => {
             const currentDate = msg.createdAt ? new Date(msg.createdAt).toDateString() : "";
             const prevDate = i > 0 && messages[i - 1].createdAt ? new Date(messages[i - 1].createdAt).toDateString() : null;
@@ -954,7 +954,7 @@ createdAt:new Date().toISOString()
           )}
 
         {/* ── Input bar ── */}
-        <div className="flex items-center gap-1 px-3 sm:px-6 py-3 border-t flex-shrink-0"
+        <div className="sticky bottom-0 z-40 flex items-center gap-1 px-3 sm:px-6 py-3 border-t flex-shrink-0"
           style={{ background: "#FFFDF9", borderColor: "#EDE3DA" }}>
           <button
             onClick={() => setShowEmojiPicker(!showEmojiPicker)}
@@ -985,7 +985,7 @@ createdAt:new Date().toISOString()
             onInput={e => { e.target.style.height = "auto"; e.target.style.height = Math.min(e.target.scrollHeight, 120) + "px"; }}
           />
           {showEmojiPicker && (
-            <div className="absolute bottom-14 left-0 z-50 sm:left-0">
+            <div className="fixed bottom-20 left-3 z-50">
               <EmojiPicker
                 width={window.innerWidth < 640 ? 280 : 350}
                 height={window.innerWidth < 640 ? 380 : 450}
