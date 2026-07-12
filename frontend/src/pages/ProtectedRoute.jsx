@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { API } from "../config";
+import LoadingScreen from "./loadingscreen";
 function ProtectedRoute({children}) {
     const [loading, setloading] = useState(true)
     const [auth, setauth] = useState(false)
@@ -69,7 +70,7 @@ return;
         }
     }
     if (loading) {
-        return <h1>Loading...</h1>
+         return <LoadingScreen />;
     }
     if (!auth) {
         return <Navigate to="/" />
