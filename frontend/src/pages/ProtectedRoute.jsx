@@ -5,6 +5,15 @@ import LoadingScreen from "./loadingscreen";
 function ProtectedRoute({children}) {
     const [loading, setloading] = useState(true)
     const [auth, setauth] = useState(false)
+    const [minimumLoading, setMinimumLoading] = useState(true);
+    useEffect(() => {
+    const timer = setTimeout(() => {
+        setMinimumLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+}, []);
+
     useEffect(()=>{
 accesstokencheck()
     },[])
@@ -69,9 +78,9 @@ return;
             
         }
     }
-    if (loading) {
-         return <LoadingScreen />;
-    }
+  if (loading || minimumLoading) {
+    return <LoadingScreen />;
+}
     if (!auth) {
         return <Navigate to="/" />
     }
