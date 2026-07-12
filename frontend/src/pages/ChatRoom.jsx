@@ -304,7 +304,7 @@ const Bubble = ({
     {msg.fileType?.startsWith("video") && (
       <video
         controls
-        className="rounded-xl mt-2 w-full max-w-[250px]"
+        className="rounded-xl mt-2 w-full max-w-[300px]"
       >
         <source src={msg.file} type={msg.fileType} />
       </video>
