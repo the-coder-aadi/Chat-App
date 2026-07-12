@@ -587,16 +587,24 @@ fileType:msg.fileType,
     setOpenMenu(null);
   };
 
-  let typingTimeout;
-  const handleTyping = (e) => {
-    setInput(e.target.value);
-    socket.emit("typing", { receiverId: selectedUser.id, senderId: myuserid });
-    clearTimeout(typingTimeout);
-    typingTimeout = setTimeout(() => {
-      socket.emit("stop-typing", { receiverId: selectedUser.id, senderId: myuserid });
-    }, 1000);
-  };
+const typingTimeout = useRef(null);
+const handleTyping = (e) => {
+  setInput(e.target.value);
 
+  socket.emit("typing", {
+    receiverId: selectedUser.id,
+    senderId: myuserid,
+  });
+
+  clearTimeout(typingTimeout.current);
+
+  typingTimeout.current = setTimeout(() => {
+    socket.emit("stop-typing", {
+      receiverId: selectedUser.id,
+      senderId: myuserid,
+    });
+  }, 1000);
+};
   const handleSend = () => {
     const text = input.trim();
     if (!text) return;
