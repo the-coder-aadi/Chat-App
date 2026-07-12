@@ -1,5 +1,8 @@
 import jwt from "jsonwebtoken"
 function refreshtokencheckmiddleware(req,res,next) {
+     console.log("===== REFRESH CHECK =====");
+    console.log("Cookies:", req.cookies);
+    console.log("Headers Cookie:", req.headers.cookie);
     const token = req.cookies["refresh-token"]
     if (!token) {
         return res.json({
