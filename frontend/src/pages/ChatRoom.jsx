@@ -811,7 +811,7 @@ createdAt:new Date().toISOString()
         }
       `}</style>
 
-      <div className="flex flex-col h-dvh w-screen overflow-hidden" style={{ background: "#FAF6F1" }}>
+      <div className="flex flex-col w-screen overflow-hidden" style={{height:"100dvh", background: "#FAF6F1" }}>
 
         {/* ── Top bar ── */}
         <header className="flex-shrink-0 flex items-center justify-between px-4 sm:px-5 py-3 border-b z-50"
@@ -954,7 +954,7 @@ createdAt:new Date().toISOString()
           )}
 
         {/* ── Input bar ── */}
-        <div className="sticky bottom-0 z-40 flex items-center gap-1 px-3 sm:px-6 py-3 border-t flex-shrink-0"
+        <div className="bottom-0 z-40 flex items-center gap-1 px-3 sm:px-6 py-3 border-t flex-shrink-0"
           style={{ background: "#FFFDF9", borderColor: "#EDE3DA" }}>
           <button
             onClick={() => setShowEmojiPicker(!showEmojiPicker)}
