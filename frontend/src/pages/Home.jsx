@@ -508,47 +508,7 @@ useEffect(() => {
         </main>
  
         {/* Bottom Nav mobile */}
-     <nav
-  className="fixed bottom-0 left-0 right-0 flex items-center justify-around px-2 py-1.5 border-t sm:hidden"
-  style={{
-    background: "rgba(255,253,249,0.96)",
-    backdropFilter: "blur(12px)",
-    borderColor: "#EDE3DA",
-    height: "60px"
-  }}
->
-  {[
-    { icon: <FaComments />, label: "Chats", active: true },
-    { icon: <FaUsers />, label: "People", active: false },
-    { icon: <FaBell />, label: "Alerts", active: false },
-    { icon: <FaCog />, label: "Settings", active: false },
-  ].map((item) => (
-    <button
-      key={item.label}
-      className="flex flex-col items-center justify-center gap-1 px-3 py-1"
-    >
-      <span
-        className="text-lg"
-        style={{
-          color: item.active ? "#EA6C3A" : "#B8A090"
-        }}
-      >
-        {item.icon}
-      </span>
 
-      <span
-        className="text-[10px] font-medium"
-        style={{
-          color: item.active ? "#EA6C3A" : "#B8A090"
-        }}
-      >
-        {item.label}
-      </span>
-
-
-    </button>
-  ))}
-</nav>
 
 {showLogoutModal && (
   <div
