@@ -94,7 +94,7 @@ if (!alreadyWelcomed) {
         receiverId: userid,
         senderId: userid,
         type: "welcome",
-        text: `Welcome to NexChat ${currentUser.name}`
+        text: `Welcome to ChatCat ${currentUser.name}`
     })
 }
 

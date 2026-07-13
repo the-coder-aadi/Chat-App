@@ -32,7 +32,7 @@ for(let user of allusers){
         receiverId: user._id,
         senderId: newuser._id,
         type: "join",
-        text: `${newuser.name} joined NexChat`
+        text: `${newuser.name} joined ChatCat`
     })
 }
 
@@ -42,7 +42,7 @@ await notificationmodel.create({
     receiverId: newuser._id,
     senderId: newuser._id,
     type: "welcome",
-    text: "Welcome to NexChat 🎉"
+    text: "Welcome to ChatCat 🎉"
 })
 
         res.json({

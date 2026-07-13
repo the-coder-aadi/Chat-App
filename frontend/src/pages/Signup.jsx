@@ -315,7 +315,7 @@ function validateForm() {
 
             {/* Chat bubbles illustration */}
             <div className="py-6 relative z-10">
-              <BubbleLeft delay="0.3s">Hey! Just joined NexChat 👋</BubbleLeft>
+              <BubbleLeft delay="0.3s">Hey! Just joined ChatCat 👋</BubbleLeft>
               <BubbleRight delay="0.6s">Welcome! It's great here 🎉</BubbleRight>
               <BubbleLeft delay="0.9s">Already loving the vibe ✨</BubbleLeft>
               <BubbleRight delay="1.2s">Let's chat! 💬</BubbleRight>
