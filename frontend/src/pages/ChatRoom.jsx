@@ -226,11 +226,29 @@ const Bubble = ({
 
   return (
     <div
-      className={`group relative transition-transform duration-200 flex items-center mb-2 ${isMe ? "justify-end" : "justify-start"}`}
-      onTouchStart={(e) => {
-        touchStartX.current = e.changedTouches[0].clientX;
-        longPressTimer.current = setTimeout(openContextMenu, 500);
-      }}
+      className={`group relative select-none transition-transform duration-200 flex items-center mb-2 ${isMe ? "justify-end" : "justify-start"}`}
+  onTouchStart={(e) => {
+  touchStartX.current = e.changedTouches[0].clientX;
+
+  const touch = e.touches[0];
+
+  const rect = {
+    top: touch.clientY,
+    bottom: touch.clientY,
+    left: touch.clientX,
+    right: touch.clientX
+  };
+
+  longPressTimer.current = setTimeout(() => {
+    setMenuAnchor({
+      rect,
+      msgId: msg.id,
+      isMe
+    });
+
+    setOpenMenu(msg.id);
+  }, 500);
+}}
       onTouchMove={() => clearTimeout(longPressTimer.current)}
       onTouchEnd={(e) => {
         clearTimeout(longPressTimer.current);
